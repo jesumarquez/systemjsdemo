@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <span id="span1">demo</span>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <!-- Remove this statement if you want to run the on the fly transpiler -->
+    <script src="build/build.js"></script>
+    <script>
+        SystemJS.import('app/app.js')
+            .then(m => {
+                let myApp = new m.MyApp();
+                let spanText = myApp.getSpanText('#span1');
+                console.log(spanText);
+            });
+    </script>
+</body>
+</html>
